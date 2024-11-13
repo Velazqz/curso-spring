@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ImportResource;
 
-import microservices.book.multiplicacion.service.EmployeeService;
+import microservices.book.multiplicacion.service.Cajero;
 
 @SpringBootApplication
 @ImportResource("classpath:beans.xml")
@@ -13,8 +13,8 @@ public class MultiplicacionApplication {
 
 	public static void main(String[] args) {
         ApplicationContext context=SpringApplication.run(MultiplicacionApplication.class, args);
-        EmployeeService employeeService = (EmployeeService)context.getBean("employeeServiceBean");
-        System.out.println(employeeService);
+        Cajero cajeroBean = (Cajero)context.getBean("cajeroBean");
+        cajeroBean.imprimirBalance("1112");
         String[] beanNames = context.getBeanDefinitionNames();
         System.out.println("******|Beans in our context|******");
         for(String beanName:beanNames) {
