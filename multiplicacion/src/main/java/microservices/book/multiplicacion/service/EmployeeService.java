@@ -1,28 +1,24 @@
 package microservices.book.multiplicacion.service;
 
+import microservices.book.multiplicacion.pojo.Employee;
+
 public class EmployeeService {
 	
-    private String employeeName;
-    private int employeeAge;
-    private String employeeId;
-
-    public EmployeeService(String employeeName,int employeeAge,String employeeId){
-        System.out.println("Primer constructor");
-        this.employeeName=employeeName;
-        this.employeeAge=employeeAge;
-        this.employeeId=employeeId;
-   }
-
-    public EmployeeService(String employeeName,String employeeId,int employeeAge){
-        System.out.println("Segundo constructor");
-        this.employeeName=employeeName;
-        this.employeeAge=employeeAge;
-        this.employeeId=employeeId;
+    private Employee employee;
+    
+    public EmployeeService(Employee employee) {
+    	this.employee = employee;
     }
 
-    @Override
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+
+
+	@Override
     public String toString() {
-        return "Employee name: "+employeeName+" Age: "+employeeAge+" EmployeeId: "+employeeId;
+        return employee.toString();
     }
 
 }
