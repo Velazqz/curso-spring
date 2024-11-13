@@ -13,11 +13,14 @@ public class MultiplicacionApplication {
 
 	public static void main(String[] args) {
         ApplicationContext context=SpringApplication.run(MultiplicacionApplication.class, args);
-        EmployeeServiceImpl employeeService = (EmployeeServiceImpl)context.getBean("employeeServiceBean");
-        employeeService.setMessage("bean1");
-        System.out.println(employeeService.getMessage());
-        EmployeeServiceImpl employeeService2 = (EmployeeServiceImpl)context.getBean("employeeServiceBean");
-        System.out.println(employeeService2.getMessage());
-        
-   }
+        EmployeeServiceImpl employeeService1 = (EmployeeServiceImpl) context.getBean("employeeServiceBean");
+        EmployeeServiceImpl employeeService2 = (EmployeeServiceImpl) context.getBean("employeeServiceBean");
+
+        // Check if they are the same instance
+        if (employeeService1 == employeeService2) {
+            System.out.println("Same instance");
+        } else {
+            System.out.println("Different instances");
+        }
+	}
 }
