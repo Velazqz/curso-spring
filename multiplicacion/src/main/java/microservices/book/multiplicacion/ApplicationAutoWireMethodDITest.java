@@ -7,11 +7,11 @@ import org.springframework.context.ApplicationContext;
 import microservices.book.multiplicacion.service.AutowireDITestService;
 
 @SpringBootApplication
-public class ApplicationAutoWireDemo {
+public class ApplicationAutoWireMethodDITest {
 
 	public static void main(String[] args) {
-		ApplicationContext context = SpringApplication.run(ApplicationAutoWireDemo.class, args);
-		AutowireDITestService bean = context.getBean(AutowireDITestService.class);
-		bean.getSampleService().sample();
+		ApplicationContext context = SpringApplication.run(ApplicationAutoWireMethodDITest.class, args);
+		AutowireDITestService bean = (AutowireDITestService) context.getBean("autowireDITestService");
+		bean.getExampleService().example();
 	}
 }

@@ -3,9 +3,10 @@ package microservices.book.multiplicacion.service;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SampleService {
-public void sample() {
-	System.out.println("Sample Service");
-}
+public class ExampleService {
+
+	public void example() {
+		System.out.println("Example Service");
+	}
 
 }
