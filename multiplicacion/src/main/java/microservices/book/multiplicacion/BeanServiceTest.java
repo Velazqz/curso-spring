@@ -3,16 +3,16 @@ package microservices.book.multiplicacion;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 
-import microservices.book.multiplicacion.service.OptionalDIService;
+import microservices.book.multiplicacion.service.BeanService;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OptionalDIServiceTest {
+public class BeanServiceTest {
 	public static void main(String[] args) {
-		ApplicationContext context = SpringApplication.run(OptionalDIServiceTest.class, args);
-		OptionalDIService bean =context.getBean(OptionalDIService.class);
-		bean.doStuff();
+		ApplicationContext context = SpringApplication.run(BeanServiceTest.class, args);
+		BeanService bean =context.getBean(BeanService.class);
+		System.out.println(bean.getBean().getName());
 		
 	}
 
