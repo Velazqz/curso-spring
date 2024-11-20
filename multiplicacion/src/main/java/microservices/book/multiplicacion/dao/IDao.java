@@ -1,6 +1,6 @@
 package microservices.book.multiplicacion.dao;
 
-
-public interface IUserDao {
+public interface IDao {
 	void result();
+
 }

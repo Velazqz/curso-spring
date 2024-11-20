@@ -2,12 +2,12 @@ package microservices.book.multiplicacion.dao;
 
 import org.springframework.stereotype.Component;
 
-@Component
-public class CustomerDao implements IUserDao {
+@Component("address")
+public class AddressDao implements IDao {
 
 	@Override
 	public void result() {
-		System.out.println("Customer DAO Implementation");
+		System.out.println("Address Dao Implementation");
 	}
 
 }
