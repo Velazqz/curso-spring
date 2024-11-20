@@ -4,16 +4,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
-import microservices.book.multiplicacion.service.AutowireDIPropertyService;
+import microservices.book.multiplicacion.service.AutowireByType;
 
 @SpringBootApplication
-public class ApplicationAutoWirePropertyDITest {
-	
+public class AutowireByTypeTest {
 	public static void main(String[] args) {
-		ApplicationContext context = SpringApplication.run(ApplicationAutoWirePropertyDITest.class,args);
-		AutowireDIPropertyService bean = (AutowireDIPropertyService)context.getBean("autowireDIPropertyService");
-		bean.getDemoService().demo();
-			
+		ApplicationContext context = SpringApplication.run(AutowireByTypeTest.class, args);
+		AutowireByType bean =context.getBean(AutowireByType.class);
+		bean.printResult();
 	}
 }
