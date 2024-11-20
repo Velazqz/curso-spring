@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class BeanService {
 	
 	@Autowired
-	//@Qualifier("bean2")
+	@Qualifier("bean2")
 	private BeanInterface bean;
 	
 	public BeanInterface getBean() {
