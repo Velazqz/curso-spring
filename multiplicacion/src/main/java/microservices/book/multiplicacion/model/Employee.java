@@ -10,52 +10,69 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "employees")
-public class Employee  implements Serializable{
-	
+@Table(name="employees")
+public class Employee implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(name = "EMPLOYEE_ID")
+	@Column(name="EMPLOYEE_ID")
 	private int employeeId;
 	
-	@Column(name = "FIRST_NAME")
-	private String firtsName;
+	@Column(name="FIRST_NAME")
+	private String firstName;
 	
-	@Column(name = "LAST_NAME")
+	@Column(name="LAST_NAME")
 	private String lastName;
 	
-	@Column(name = "EMAIL")
+	@Column(name="EMAIL")
 	private String email;
 	
-	@Column(name = "PHONE_NUMBER")
+	@Column(name="PHONE_NUMBER")
 	private String phoneNumber;
 	
-	@Column(name = "HIRE_DATE")
+	@Column(name="HIRE_DATE")
 	private Date hireDate;
 	
-	@Column(name = "JOB_ID")
+	@Column(name="JOB_ID")
 	private String jobId;
 	
-	@Column(name = "SALARY")
+	@Column(name="SALARY")
 	private BigDecimal salary;
 	
-	@Column(name = "COMISSION_PCT")
-	private BigDecimal comission_pct;
+	@Column(name="COMMISSION_PCT")
+	private BigDecimal comissionPct;
 	
-	@Column(name = "MANAGER_ID")
+	@Column(name="MANAGER_ID")
 	private Integer managerId;
 	
-	@Column(name = "DEPARTMENT_ID")
+	@Column(name="DEPARTMENT_ID")
 	private Integer departmentId;
+	
+	public Employee() {}
 
-	public Employee(int employeeId, String lastName, String email, Date hireDate, String jobId) {
+	public Employee(int employeeId, String lastName, 
+			        String email, Date hireDate, String jobId) {
 		super();
 		this.employeeId = employeeId;
 		this.lastName = lastName;
 		this.email = email;
 		this.hireDate = hireDate;
 		this.jobId = jobId;
+	}
+
+	public Employee(int employeeId, String lastName,
+			String email, Date hireDate,String jobId,String firstName,
+			String phoneNumber,BigDecimal salary, BigDecimal comissionPct,
+			Integer managerId, Integer departmentId) {
+		
+	    this(employeeId,lastName,email,hireDate,jobId);
+		this.firstName = firstName;
+		this.phoneNumber = phoneNumber;
+		this.salary = salary;
+		this.comissionPct = comissionPct;
+		this.managerId = managerId;
+		this.departmentId = departmentId;
 	}
 
 	public int getEmployeeId() {
@@ -66,12 +83,12 @@ public class Employee  implements Serializable{
 		this.employeeId = employeeId;
 	}
 
-	public String getFirtsName() {
-		return firtsName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirtsName(String firtsName) {
-		this.firtsName = firtsName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getLastName() {
@@ -122,12 +139,12 @@ public class Employee  implements Serializable{
 		this.salary = salary;
 	}
 
-	public BigDecimal getComission_pct() {
-		return comission_pct;
+	public BigDecimal getComissionPct() {
+		return comissionPct;
 	}
 
-	public void setComission_pct(BigDecimal comission_pct) {
-		this.comission_pct = comission_pct;
+	public void setComissionPct(BigDecimal comissionPct) {
+		this.comissionPct = comissionPct;
 	}
 
 	public Integer getManagerId() {
@@ -155,21 +172,26 @@ public class Employee  implements Serializable{
 		if(this == obj) {
 			return true;
 		}
-		if(!(obj instanceof Employee) ) {
+		if(!(obj instanceof Employee)) {
 			return false;
 		}
 		Employee employee = (Employee)obj;
-		if(firtsName != null ? !firtsName.equals(employee.getFirtsName()) : employee.firtsName != null) {
+		
+		if(firstName != null ? !firstName.equals(employee.getFirstName()):employee.firstName != null) {
 			return false;
-		}else {
+		} else {
 			return true;
 		}
 	}
 	
 	@Override
 	public int hashCode() {
-		return firtsName != null ? firtsName.hashCode() : 0;
+		return firstName != null ? firstName.hashCode():0;
 	}
 	
-}
+	
+	
+	
+	
 
+}

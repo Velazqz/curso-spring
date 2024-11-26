@@ -1,23 +1,4 @@
-/*
- REM **************************************************************************
- REM Nombre del Script: iu_activityprojectval.sql
- REM Proyecto: Capacitacion Spring Boot
- REM --------------------------------------------------------------------------
- REM AUDIT TRAIL: Version 1
- REM Realizado por: VGVDB  15 de Noviembre de 2024
- */
 
-
-INSERT INTO activityprojectval.users (name,last_name,email,role) VALUES('Javier','Morales Sanchez','jmorales111@gmail.com','DEVELOPER');
-INSERT INTO activityprojectval.users (name,last_name,email,role) VALUES('Valeria','Morales Sanchez','vmorales111@gmail.com','ADMINISTRATOR');
-INSERT INTO activityprojectval.users (name,last_name,email,role) VALUES('Elizabeth','Aguilar','eaguilar@outlook.com','ADMINISTRATOR');
-INSERT INTO activityprojectval.users (name,last_name,email,role) VALUES('Sandra','Sanchez','ssanchez@aforecoppel.com','DEVELOPER');
-INSERT INTO activityprojectval.users (name,last_name,email,role) VALUES('Gisela','Hernandez','ghernandez@scanda.com.mx','ADMINISTRATOR');
-INSERT INTO activityprojectval.users (name,last_name,email,role) VALUES('Erika','Zuniga','ezuniga@spa.com','ADMINISTRATOR');
-INSERT INTO activityprojectval.users (name,last_name,email,role) VALUES('Juan','Carrillo','jcarrillo@atlw.com.mx','DEVELOPER');
-INSERT INTO activityprojectval.users (name,last_name,email,role) VALUES('Alejandra','Rodriguez','arodriguez@outlook.com','ADMINISTRATOR');
-INSERT INTO activityprojectval.users (name,last_name,email,role) VALUES('Vanessa','Lopez Hernandez','vlopez@iq4.com','DEVELOPER');
-INSERT INTO activityprojectval.users (name,last_name,email,role) VALUES('Sonia','Segura Smith','ssegura@test.com','DEVELOPER');
 /*
  REM **************************************************************************
  REM Nombre del Script: iu_activityprojectval.sql
