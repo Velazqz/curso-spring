@@ -34,8 +34,14 @@ public class BookServicePortImpl implements BookServicePort{
 	}
 
 	@Override
-	public List<BookDto> getBookById(Long bookId) {
+	public List<BookDto> getBooks() {
+		return bookPersistencePort.getBooks();
+	}
+
+	@Override
+	public BookDto getBookById(Long bookId) {
 		return bookPersistencePort.getBookById(bookId);
 	}
+	
 
 }
