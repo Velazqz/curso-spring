@@ -12,6 +12,8 @@ public interface BookServicePort {
 	
 	BookDto updateBook(BookDto bookDto);
 	
-	List<BookDto> getBookById(Long bookId);
+	List<BookDto> getBooks();
+	
+	BookDto getBookById(Long bookId);
 	
 }
