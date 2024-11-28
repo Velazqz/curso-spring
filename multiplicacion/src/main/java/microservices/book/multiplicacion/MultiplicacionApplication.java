@@ -1,13 +1,19 @@
 package microservices.book.multiplicacion;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-@SpringBootApplication
+import microservices.book.multiplicacion.entities.Game;
+
+//@SpringBootApplication
 public class MultiplicacionApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MultiplicacionApplication.class, args);
+	public static void main(String[] args) throws Exception {
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		Game game1 = context.getBean("game",Game.class);
+		System.out.println("****|Game|****");
+		System.out.println(game1.playGame());
+
 	}
 
 }
