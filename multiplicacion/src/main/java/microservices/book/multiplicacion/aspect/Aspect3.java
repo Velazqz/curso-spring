@@ -21,9 +21,8 @@ public class Aspect3 {
     public void logReturnValue(JoinPoint joinPoint, Object returnValue) {
         String className = joinPoint.getSignature().getDeclaringTypeName();
         String methodName = joinPoint.getSignature().getName();
-        System.out.println(String.format(
-            "Method executed: %s.%s, Return Value: %s",
-            className, methodName, returnValue
+        System.out.println(String.format("Aspect 3: Metodo Ejecutado - %s.%s, Return Value: %s",
+        		className, methodName, returnValue
         ));
     }
 

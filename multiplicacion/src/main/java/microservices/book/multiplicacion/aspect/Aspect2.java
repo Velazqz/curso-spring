@@ -18,10 +18,9 @@ public class Aspect2 {
 	        String className = joinPoint.getTarget().getClass().getSimpleName();
 	        String methodName = joinPoint.getSignature().getName();
 	        Object[] args = joinPoint.getArgs();
-	        System.out.println("Método interceptado: " + className + "." + methodName);
-	        System.out.println("Argumentos:");
+	        System.out.println("Aspect 2: Método interceptado - " + className + "." + methodName);
 	        for (Object arg : args) {
-	            System.out.println("--->" + arg);
+	            System.out.println("Aspect 2: Argumentos - " + arg);
 	        }
 	    }
 	}

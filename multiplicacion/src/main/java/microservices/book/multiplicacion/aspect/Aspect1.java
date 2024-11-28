@@ -19,7 +19,7 @@ public class Aspect1 {
         Long execution= t2-t1;
         String className=joinPoint.getSignature().getDeclaringTypeName();
         String methodName=joinPoint.getSignature().getName();
-        System.out.println(className + "." + methodName + "." + "time execution:" + execution);
+        System.out.println("Aspect 1: Tiempo - " + className + "." + methodName + "." + "time execution:" + execution);
         return returnValue;
     }
 
