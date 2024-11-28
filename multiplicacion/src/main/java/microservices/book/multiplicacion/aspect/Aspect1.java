@@ -11,9 +11,9 @@ public class Aspect1 {
 	
 	//advice - around
 	//execution(...) -pointcut
-    @Around("execution (* microservices.book.multiplicacion.entities.BaseBallGame.playGame(...))")
+    @Around("execution (* microservices.book.multiplicacion.entities.BaseBallGame.playGame(..))")
     public Object doLogProcessGame(ProceedingJoinPoint joinPoint) throws Throwable{
-        Long t1=System.currentTimeMillis();
+    	Long t1=System.currentTimeMillis();
         Object returnValue= joinPoint.proceed();
         Long t2=System.currentTimeMillis();
         Long execution= t2-t1;

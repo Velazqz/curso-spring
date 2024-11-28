@@ -34,8 +34,7 @@ public class BaseBallGame implements Game{
 	@Override
 	public String playGame() throws Exception {
 		Thread.sleep(3000);
-		System.out.println("**Play Game**");
-		return Math.random() < 0.5 ? getHomeTeam().getName() : getAwayTeam().getName();
+		return Math.random() < 0.5 ?getHomeTeam().getName():getAwayTeam().getName();
 	}
 
 	public DataSource getDatasource() {
