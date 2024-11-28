@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import jakarta.annotation.Resource;
-import microservices.book.multiplicacion.entities.BaseballGame;
+import microservices.book.multiplicacion.entities.BaseBallGame;
 import microservices.book.multiplicacion.entities.Game;
 import microservices.book.multiplicacion.entities.Team;
 
@@ -30,8 +30,8 @@ public class AppConfig {
 	
 	@Bean
 	Game game() {
-		BaseballGame baseballGame = new BaseballGame(redSox,cubs);
-		baseballGame.setDatasource(datasource);
-		return baseballGame;
+		BaseBallGame baseBallGame = new BaseBallGame(redSox,cubs);
+		baseBallGame.setDatasource(datasource);
+		return baseBallGame;
 	}
 }

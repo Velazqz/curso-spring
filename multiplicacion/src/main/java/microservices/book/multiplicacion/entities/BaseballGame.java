@@ -2,15 +2,15 @@ package microservices.book.multiplicacion.entities;
 
 import javax.sql.DataSource;
 
-public class BaseballGame implements Game{
+public class BaseBallGame implements Game{
 	
 	private Team homeTeam;
 	private Team awayTeam;
 	private DataSource datasource;
 	
-	public BaseballGame() {}
+	public BaseBallGame() {}
 
-	public BaseballGame(Team homeTeam, Team awayTeam) {
+	public BaseBallGame(Team homeTeam, Team awayTeam) {
 		this.homeTeam = homeTeam;
 		this.awayTeam = awayTeam;	
 	}
@@ -34,7 +34,8 @@ public class BaseballGame implements Game{
 	@Override
 	public String playGame() throws Exception {
 		Thread.sleep(3000);
-		return Math.random() < 0.5 ?getHomeTeam().getName() : getAwayTeam().getName();
+		System.out.println("**Play Game**");
+		return Math.random() < 0.5 ? getHomeTeam().getName() : getAwayTeam().getName();
 	}
 
 	public DataSource getDatasource() {
