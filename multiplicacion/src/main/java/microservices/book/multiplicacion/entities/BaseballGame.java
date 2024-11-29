@@ -8,7 +8,7 @@ public class BaseBallGame implements Game{
 	private Team awayTeam;
 	private DataSource datasource;
 	
-	public BaseBallGame() {}
+	//public BaseBallGame() {}
 
 	public BaseBallGame(Team homeTeam, Team awayTeam) {
 		this.homeTeam = homeTeam;
@@ -34,7 +34,8 @@ public class BaseBallGame implements Game{
 	@Override
 	public String playGame() throws Exception {
 		Thread.sleep(3000);
-		return Math.random() < 0.5 ?getHomeTeam().getName():getAwayTeam().getName();
+		throw new Exception("Excepción de prueba");
+		//return Math.random() < 0.5 ?getHomeTeam().getName():getAwayTeam().getName();
 	}
 
 	public DataSource getDatasource() {
