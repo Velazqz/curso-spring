@@ -1,14 +1,13 @@
-package microservices.book.multiplication.exception;
+package microservices.book.api.exception;
 
 public class ErrorResponse {
-	
+
 	private long timestamp;
 	private int status;
 	private String error;
 	private String message;
 	private String path;
-	
-	
+
 	public int getStatus() {
 		return status;
 	}
@@ -33,15 +32,13 @@ public class ErrorResponse {
 	public void setPath(String path) {
 		this.path = path;
 	}
-	
+
 	public long getTimestamp() {
 		return timestamp;
 	}
-	
+
 	public void setTimestamp(long timestamp) {
 		this.timestamp = timestamp;
 	}
-	
-	
 
 }

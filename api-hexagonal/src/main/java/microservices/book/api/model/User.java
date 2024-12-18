@@ -1,4 +1,4 @@
-package microservices.book.multiplication.model;
+package microservices.book.api.model;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -12,40 +12,39 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="USERS")
 public class User {
-	
+
 	@Id
 	@GeneratedValue
 	@Column(columnDefinition="RAW(16)")
 	private UUID id;
-	
+
 	@Column(name="CREATION_DATE")
 	private LocalDateTime creationDate;
-	
+
 	@Column(name="MODIFICATION_DATE")
 	private LocalDateTime modificationDate;
-	
+
 	@Column(name="ENABLED")
 	private int enabled;
-	
+
 	@Column(name="EMAIL")
 	private String email;
-	
+
 	@Column(name="NAME")
 	private String name;
-	
+
 	@Column(name="LAST_NAME")
 	private String lastName;
-	
+
 	@Column(name="VACATION_START")
 	private LocalDateTime vacationStart;
-	
+
 	@Column(name="VACATION_ENDING")
 	private LocalDateTime vacationEnding;
-	
+
 	@Column(name="ROLE")
 	private String role;
-	
-	
+
 	public User() {}
 
 	public UUID getId() {
@@ -127,7 +126,5 @@ public class User {
 	public void setModificationDate(LocalDateTime modificationDate) {
 		this.modificationDate = modificationDate;
 	}
-	
-	
 
 }

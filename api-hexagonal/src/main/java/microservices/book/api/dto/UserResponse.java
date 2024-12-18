@@ -1,13 +1,13 @@
-package microservices.book.multiplication.dto;
+package microservices.book.api.dto;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class UserResponse implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private UUID id;
 	private LocalDateTime creationDate;
 	private int enabled;
@@ -15,10 +15,10 @@ public class UserResponse implements Serializable {
 	private String name;
 	private String lastName;
 	private String role;
-	
-	public UserResponse(UUID id, LocalDateTime creationDate, 
-			            int enabled, String email, String name, String lastName,
-			            String role) {
+
+	public UserResponse(UUID id, LocalDateTime creationDate,
+			int enabled, String email, String name, String lastName,
+			String role) {
 		super();
 		this.id = id;
 		this.creationDate = creationDate;
@@ -84,5 +84,5 @@ public class UserResponse implements Serializable {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
+
 }

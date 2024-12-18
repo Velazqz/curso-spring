@@ -1,4 +1,4 @@
-package microservices.book.multiplication.controller;
+package microservices.book.api.controller;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -18,66 +18,49 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 
-import microservices.book.multiplication.dto.UserResponse;
-import microservices.book.multiplication.dto.UserUpdateRequest;
-import microservices.book.multiplication.model.User;
-import microservices.book.multiplication.service.IUserService;
+import microservices.book.api.dto.UserResponse;
+import microservices.book.api.dto.UserUpdateRequest;
+import microservices.book.api.model.User;
+import microservices.book.api.service.IUserService;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
-	
-	
+
 	@Autowired
 	private IUserService userService;
-		
+
 	@GetMapping
-	public ResponseEntity<Iterable<UserResponse>> 
-	       getUsers(@RequestParam(required=false,defaultValue="0") String page,
-	                @RequestParam(required=false,defaultValue="20") String size,
-	            	@RequestParam(required=false,defaultValue="creationDate,desc") String[] sort){
-		
+	public ResponseEntity<Iterable<UserResponse>>
+		getUsers(@RequestParam(required=false,defaultValue="0") String page,
+						@RequestParam(required=false,defaultValue="20") String size,
+						@RequestParam(required=false,defaultValue="creationDate,desc") String[] sort){
+
 		int pageInt = Integer.valueOf(page);
 		int sizeInt = Integer.valueOf(size);
 		ArrayList<UserResponse> userResponse;
-		
 		userResponse = userService.findAll(pageInt, sizeInt, sort);
 		// Headers
-	    long numberRows = userService.count();
+		long numberRows = userService.count();
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Total-Elements", String.valueOf(numberRows));
-		
 		return new ResponseEntity<>(userResponse,headers,HttpStatus.OK);
-		
 	}
-	
-	
-	
+
 	@GetMapping("/{id}")
 	public Optional<User> getUser(@PathVariable UUID id) {
-		
 		Optional<User> user = userService.getUser(id);
 		return user;
-
 	}
-	
-	
-	
+
 	@PutMapping("/{id}")
 	public ResponseEntity<User> putUser(@PathVariable UUID id,
-			                            @Valid @RequestBody UserUpdateRequest userUpdateRequest){
-		
-		
+																			@Valid @RequestBody UserUpdateRequest userUpdateRequest){
 		ResponseEntity<User> response = null;
 		User user = null;
 		user = userService.putUser(id, userUpdateRequest);
 		response = new ResponseEntity<>(user,HttpStatus.OK);
-	
 		return response;
-		
 	}
-	
-	
-	
 
 }

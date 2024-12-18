@@ -1,10 +1,10 @@
-package microservices.book.multiplication;
+package microservices.book.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MultiplicationApplicationTests {
+class apiApplicationTests {
 
 	@Test
 	void contextLoads() {

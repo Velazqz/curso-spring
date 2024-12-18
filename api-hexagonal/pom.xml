@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>microservices.book</groupId>
-	<artifactId>multiplication</artifactId>
+	<artifactId>api-hexagonal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>multiplication</name>
-	<description>multiplication application</description>
+	<name>api-hexagonal</name>
+	<description>api-hexagonal application</description>
 	<url/>
 	<licenses>
 		<license/>

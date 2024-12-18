@@ -1,13 +1,13 @@
-package microservices.book.multiplication;
+package microservices.book.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MultiplicationApplication {
+public class apiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MultiplicationApplication.class, args);
+		SpringApplication.run(apiApplication.class, args);
 	}
 
 }
